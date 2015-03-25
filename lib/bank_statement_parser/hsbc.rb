@@ -1,3 +1,5 @@
+require 'date'
+require 'bank_statement_parser/base'
 module BankStatementParser
 
   # Parser for HSBC bank statements
