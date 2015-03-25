@@ -23,8 +23,8 @@ module BankStatementParser
 
       reset
 
-      # Grab the full text file content
-      full_text = File.read(path)
+      # Grab the full text file content, and re-encode to ASCII
+      full_text = ascii_filter(File.read(path))
 
       # Process each line in turn
       full_text.split("\n").each do |line|
@@ -50,6 +50,39 @@ module BankStatementParser
       @account_number = nil
       @statement_date = nil
       @records = []
+    end
+
+    private
+
+    # Filter the specified text, re-encoding to ASCII
+    def self.ascii_filter text
+      rv = text
+
+      # Squash some Unicode character categories
+      #
+      # {Zs} necessary to match statement date line
+      # {Pc} necessary to match statement record lines
+      rv.gsub!(/[\p{Zs}\p{Pc}]/, " ")
+
+      # Replace Unicode soft hyphens
+      rv.gsub!(/\u00ad/, "-")
+
+      # Replace... well, who knows just *what* this is...
+      rv.gsub!(/\u0a0c/, " ")
+
+      # Re-encode to ASCII
+      encoding_options = {
+        invalid:           :replace, # Replace invalid byte sequences
+        undef:             :replace, # Replace anything not defined in ASCII
+        replace:           '',       # Use a blank for those replacements
+        universal_newline: true      # Always break lines with \n
+      }
+      rv = rv.encode(Encoding.find('US-ASCII'), encoding_options)
+
+      # Replace ASCII form feed characters
+      rv.gsub!(/\f/, "\n")
+
+      rv
     end
 
   end
