@@ -19,20 +19,23 @@ module BankStatementParser
 
   # A bank statement record
   class StatementRecord
-    attr_accessor :date, :type, :credit, :amount, :detail
+    attr_accessor :date, :type, :credit, :amount, :detail, :balance
 
     # Constructor
-    def initialize date: nil, type: nil, credit: nil, amount: nil, detail: nil
+    def initialize date: nil, type: nil, credit: nil, amount: nil, detail: nil,
+      balance: nil
+
       @date = date
       @type = type
       @credit = credit
       @amount = amount
       @detail = detail
+      @balance = balance
     end
 
     # Stringify
     def to_s
-      "%s:%s:%s:%f:%s" % [date, type, credit.to_s, amount, detail]
+      "%s:%s:%s:%f:%s:%f" % [date, type, credit.to_s, amount, detail, balance]
     end
 
     # Equality test
@@ -41,7 +44,8 @@ module BankStatementParser
                 type == other.type &&
                 credit == other.credit &&
                 amount == other.amount &&
-                detail == other.detail)
+                detail == other.detail &&
+                balance == other.balance)
     end
   end
 
