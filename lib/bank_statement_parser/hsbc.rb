@@ -350,6 +350,9 @@ module BankStatementParser
       paid_out.delete!(",") unless paid_out.nil?
       paid_in.delete!(",") unless paid_in.nil?
       balance = col_fragments[4]
+      unless balance.nil?
+        balance = balance.delete(",").to_f
+      end
 
       if !paid_out.nil? || !paid_in.nil?
         logger.debug { "Found the end of a record (group)" }
@@ -363,7 +366,8 @@ module BankStatementParser
                                      type: @cached_payment_type,
                                      credit: record_credit,
                                      amount: record_amount,
-                                     detail: full_details)
+                                     detail: full_details,
+                                     balance: balance)
         logger.debug { "Created statement record: #{record}" }
         @records << record
 
