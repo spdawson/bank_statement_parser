@@ -17,6 +17,7 @@
 
 require 'date'
 require 'bank_statement_parser/base'
+require 'bank_statement_parser/utils'
 module BankStatementParser
 
   # Parser for HSBC bank statements
@@ -26,6 +27,9 @@ module BankStatementParser
     #
     # Returns true if parsing should continue; false to terminate the parser
     def handle_line line
+
+      # Re-encode line to ASCII
+      line = Utils.ascii_filter(line)
 
       # Skip blank lines
       return true if line =~ /\A\s*\z/
