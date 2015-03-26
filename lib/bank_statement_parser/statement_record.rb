@@ -35,7 +35,12 @@ module BankStatementParser
 
     # Stringify
     def to_s
-      "%s:%s:%s:%f:%s:%f" % [date, type, credit.to_s, amount, detail, balance]
+      "%s:%s:%s:%s:%s:%s" % [date,
+                             type,
+                             credit.to_s,
+                             (amount.nil? ? '' : amount.to_s),
+                             detail,
+                             (balance.nil? ? '' : balance.to_s)]
     end
 
     # Equality test
