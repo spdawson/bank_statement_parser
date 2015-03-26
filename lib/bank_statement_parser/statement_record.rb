@@ -38,9 +38,9 @@ module BankStatementParser
       "%s:%s:%s:%s:%s:%s" % [date,
                              type,
                              credit.to_s,
-                             (amount.nil? ? '' : amount.to_s),
+                             (amount || ''),
                              detail,
-                             (balance.nil? ? '' : balance.to_s)]
+                             (balance || '')]
     end
 
     # Equality test
