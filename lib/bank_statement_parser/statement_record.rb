@@ -41,7 +41,7 @@ module BankStatementParser
                 type == other.type &&
                 credit == other.credit &&
                 amount == other.amount &&
-                detail = other.detail)
+                detail == other.detail)
     end
   end
 
