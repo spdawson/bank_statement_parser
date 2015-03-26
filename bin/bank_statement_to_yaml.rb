@@ -32,17 +32,17 @@ bank_statement:
   account_number: #{parser.account_number}
   sort_code: #{parser.sort_code}
   statement_date: #{parser.statement_date}
+  records:
 METADATA
 
 # Statement records
 parser.records.each do |record|
   puts <<RECORD
-  records:
-    date: #{record.date}
-    type: #{record.type}
-    credit: #{record.credit}
-    amount: #{record.amount || ''}
-    detail: #{record.detail}
-    balance: #{record.balance || ''}
+    - date: #{record.date}
+      type: #{record.type}
+      credit: #{record.credit}
+      amount: #{record.amount || ''}
+      detail: #{record.detail}
+      balance: #{record.balance || ''}
 RECORD
 end
