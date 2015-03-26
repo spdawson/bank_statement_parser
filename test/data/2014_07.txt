@@ -1,0 +1,76 @@
+Help with previous statements
+Previous statements
+Previous statements from:
+BANK A/C
+SMITH J R , 12-34-56 12345678
+ My accounts
+Balance                 £ 5540.96 C
+Available Balance       £ 5475.96 C
+As At             14 Nov 2014 10:46
+Overdraft Limit               £ 250
+Statement date:
+08 Jul 2014
+International bank account number:
+GB91MIDL12345612345678
+Branch identifier code:
+MIDLGB1234F
+ Date     Type Description                           Paid out    Paid in    Balance (£)
+ 08 Jun            Balance brought forward                                 5091.70
+ 11 Jun CHQ        100000                             350.00
+ 11 Jun BP         WILKINS A B                                    45.00     4786.70
+ 12 Jun CHQ        100001                             151.20                4635.50
+ 14 Jun PIM        CASH IN HSBC JUN14                            480.00     5115.50
+ 16 Jun DD         XYZ                                  9.90
+ 16 Jun VIS        SERVICESYES                         13.50
+ 16 Jun CR         CHQ IN AT HSBC BANK PLC                        45.00     5137.10
+ 18 Jun BP         WILKINS A B                                    45.00     5182.10
+ 19 Jun VIS        WILKINSON.COM                       27.62
+ 19 Jun VIS        TESCO PAY AT PUMP                   50.05                5104.43
+ 20 Jun CR         CASH IN AT HSBC BANK PLC                      230.00
+ 20 Jun CR         CHQ IN AT HSBC BANK PLC                        45.00     5379.43
+ 25 Jun DD         ABCD                                15.20                5364.23
+ 26 Jun SO         MISS J R SMITH                    200.00
+ 26 Jun BP         WILKINS A B                                    45.00     5209.23
+ 27 Jun BP         FISH SERVICE                                   25.00
+ 27 Jun VIS        HOUSE OF FRASER                       7.50               5226.73
+ 28 Jun PIM        CASH IN HSBC JUN28                            170.00     5396.73
+ 30 Jun VIS        WILKINSON                             4.65
+ 30 Jun CR         CHQ IN AT HSBC BANK PLC                        90.00     5482.08
+ 01 Jul DD         POWERWASH AB                        29.60                5452.48
+ 03 Jul BP         WILKINS A B                                    45.00
+03 Jul    VIS      SERVICESYES                         13.50                5483.98
+04 Jul    PIM      CASH IN HSBC JUL04                            440.00
+04 Jul    CR       CHQ IN AT HSBC BANK PLC                        90.00    6013.98
+07 Jul    VIS      TESCO PAY AT PUMP                   43.37               5970.61
+08 Jul             Balance carried forward                                 5970.61
+Statements produced from 13 July 2014 are available in PDF format.
+
+If your pop-up blocker is on, please 'always allow' hsbc.co.uk as a trusted source. See Help centre for further advice.
+Dispute resolution
+
+If you have a problem with your agreement, please try to resolve it with us in the first instance. If you
+are not happy with the way in which we handled your complaint or the result, you may be able to
+complain to the Financial Ombudsman Service. If you do not take up your problem with us first you
+will not be entitled to complain to the Ombudsman. We can provide details of how to contact the
+Ombudsman.
+
+Please click here for more information including charges and interest rates applicable to your account.
+ Back to list
+ Print
+
+Statement delivery
+You can view statements online for your current, savings and Flexiloan accounts for up to 72 months and print or
+save copies for your records. Why not amend your Statement delivery Your delivery preference options will be
+displayed preferences now?
+
+
+
+To read our PDF files you'll need to have Acrobat Reader 8.0™ or above. We think most of you will have this but if
+you don't, it's free and can be downloaded from Adobe UK. If you are accessing this website using screen reading
+technology that cannot read PDFs, a converter is available at Access Adobe.
+
+
+
+
+© HSBC Bank plc 2014
+

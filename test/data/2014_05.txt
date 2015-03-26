@@ -1,0 +1,82 @@
+Help with previous statements
+Previous statements
+Previous statements from:
+BANK A/C
+SMITHS J R , 12-34-56 12345678
+ My accounts
+Balance                 £ 5540.96 C
+Available Balance       £ 5475.96 C
+As At             14 Nov 2014 10:46
+Overdraft Limit               £ 250
+Statement date:
+08 Jun 2014
+International bank account number:
+GB91MIDL12345612345678
+Branch identifier code:
+MIDLGB1234F
+ Date     Type Description                       Paid out   Paid in    Balance (£)
+ 08 May            Balance brought forward                            4400.43
+ 09 May PIM        CASH IN HSBC MAY09                       215.00
+ 09 May CR         CHQ IN AT HSBC BANK PLC                   45.00    4660.43
+ 12 May VIS        WESTON EASTERN ONE              11.60              4648.83
+ 14 May TFR        123456 12345678                200.00
+ 14 May BP         HMRC NICO                       70.20
+ 14 May BP         WILKINS A B                               45.00    4423.63
+ 15 May CHQ        100006                         151.20
+ 15 May VIS        TESCO STORES 1234               45.00              4227.43
+ 16 May DD         ABC                              9.58
+ 16 May CHQ        100007                         200.00
+ 16 May BP         J R SMITHS                      80.00              3937.85
+ 17 May PIM        CASH IN HSBC MAY17                       235.00
+ 17 May ATM CASH HSBC MAY17                       180.00              3992.85
+ 18 May BP         MISS Z X MILKS                 107.00              3885.85
+ 19 May CR         CHQ IN AT HSBC BANK PLC                   45.00
+ 19 May VIS        TESCO PAY AT PUMP               40.10              3890.75
+ 22 May BP         WILKINS A B                               45.00    3935.75
+ 23 May CHQ        100008                          15.00
+ 23 May PIM        CASH IN HSBC MAY23                       365.00    4285.75
+ 27 May DD         ABCD                            15.20
+ 27 May SO         MISS J R SMITHS                150.00
+ 27 May VIS        PAPERCHASE                       9.25              4111.30
+28 May   BP      WILKINS A B                                 45.00    4156.30
+29 May   CHQ     100009                           200.00              3956.30
+30 May   PIM     CASH IN HSBC MAY30                         305.00
+30 May   CR      CHQ IN AT HSBC BANK PLC                     45.00    4306.30
+01 Jun   BP      VWXY                              45.00              4261.30
+02 Jun   DD      POWERWASH AB                      29.60
+02 Jun   SO      SHEFFIELD PO                      15.00
+02 Jun   BP      FISH SERVICE                                50.00    4266.70
+06 Jun   CR      CASH IN AT HSBC BANK PLC                   665.00
+06 Jun   BP      WILKINS A B                                 45.00
+06 Jun   CR      CHQ IN AT HSBC BANK PLC                    115.00    5091.70
+08 Jun           Balance carried forward                              5091.70
+Statements produced from 13 July 2014 are available in PDF format.
+If your pop-up blocker is on, please 'always allow' hsbc.co.uk as a trusted source. See Help centre for further advice.
+Dispute resolution
+
+If you have a problem with your agreement, please try to resolve it with us in the first instance. If you
+are not happy with the way in which we handled your complaint or the result, you may be able to
+complain to the Financial Ombudsman Service. If you do not take up your problem with us first you
+will not be entitled to complain to the Ombudsman. We can provide details of how to contact the
+Ombudsman.
+
+Please click here for more information including charges and interest rates applicable to your account.
+ Back to list
+ Print
+
+Statement delivery
+You can view statements online for your current, savings and Flexiloan accounts for up to 72 months and print or
+save copies for your records. Why not amend your Statement delivery Your delivery preference options will be
+displayed preferences now?
+
+
+
+To read our PDF files you'll need to have Acrobat Reader 8.0™ or above. We think most of you will have this but if
+you don't, it's free and can be downloaded from Adobe UK. If you are accessing this website using screen reading
+technology that cannot read PDFs, a converter is available at Access Adobe.
+
+
+
+
+© HSBC Bank plc 2014
+
