@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
                    "lib/bank_statement_parser/statement_record.rb",
                    "lib/bank_statement_parser/utils.rb"]
   s.homepage    =
-    "http://rubygems.org/gems/bank_statement_parser"
+    "https://github.com/spdawson/bank_statement_parser"
   s.license     = "GPLv3"
 end
