@@ -3,184 +3,159 @@ bank_statement:
   sort_code: 12-34-56
   statement_date: 2014-07-08
   records:
-    date: 2014-06-11
-    type: CHQ
-    credit: false
-    amount: 350.0
-    detail: 100000
-    balance: 
-  records:
-    date: 2014-06-11
-    type: BP
-    credit: true
-    amount: 45.0
-    detail: WILKINS A B
-    balance: 4786.7
-  records:
-    date: 2014-06-12
-    type: CHQ
-    credit: false
-    amount: 151.2
-    detail: 100001
-    balance: 4635.5
-  records:
-    date: 2014-06-14
-    type: PIM
-    credit: true
-    amount: 480.0
-    detail: CASH IN HSBC JUN14
-    balance: 5115.5
-  records:
-    date: 2014-06-16
-    type: DD
-    credit: false
-    amount: 9.9
-    detail: XYZ
-    balance: 
-  records:
-    date: 2014-06-16
-    type: VIS
-    credit: false
-    amount: 13.5
-    detail: SERVICESYES
-    balance: 
-  records:
-    date: 2014-06-16
-    type: CR
-    credit: true
-    amount: 45.0
-    detail: CHQ IN AT HSBC BANK PLC
-    balance: 5137.1
-  records:
-    date: 2014-06-18
-    type: BP
-    credit: true
-    amount: 45.0
-    detail: WILKINS A B
-    balance: 5182.1
-  records:
-    date: 2014-06-19
-    type: VIS
-    credit: false
-    amount: 27.62
-    detail: WILKINSON.COM
-    balance: 
-  records:
-    date: 2014-06-19
-    type: VIS
-    credit: false
-    amount: 50.05
-    detail: TESCO PAY AT PUMP
-    balance: 5104.43
-  records:
-    date: 2014-06-20
-    type: CR
-    credit: true
-    amount: 230.0
-    detail: CASH IN AT HSBC BANK PLC
-    balance: 
-  records:
-    date: 2014-06-20
-    type: CR
-    credit: true
-    amount: 45.0
-    detail: CHQ IN AT HSBC BANK PLC
-    balance: 5379.43
-  records:
-    date: 2014-06-25
-    type: DD
-    credit: false
-    amount: 15.2
-    detail: ABCD
-    balance: 5364.23
-  records:
-    date: 2014-06-26
-    type: SO
-    credit: false
-    amount: 200.0
-    detail: MISS J R SMITH
-    balance: 
-  records:
-    date: 2014-06-26
-    type: BP
-    credit: true
-    amount: 45.0
-    detail: WILKINS A B
-    balance: 5209.23
-  records:
-    date: 2014-06-27
-    type: BP
-    credit: true
-    amount: 25.0
-    detail: FISH SERVICE
-    balance: 
-  records:
-    date: 2014-06-27
-    type: VIS
-    credit: false
-    amount: 7.5
-    detail: HOUSE OF FRASER
-    balance: 5226.73
-  records:
-    date: 2014-06-28
-    type: PIM
-    credit: true
-    amount: 170.0
-    detail: CASH IN HSBC JUN28
-    balance: 5396.73
-  records:
-    date: 2014-06-30
-    type: VIS
-    credit: false
-    amount: 4.65
-    detail: WILKINSON
-    balance: 
-  records:
-    date: 2014-06-30
-    type: CR
-    credit: true
-    amount: 90.0
-    detail: CHQ IN AT HSBC BANK PLC
-    balance: 5482.08
-  records:
-    date: 2014-07-01
-    type: DD
-    credit: false
-    amount: 29.6
-    detail: POWERWASH AB
-    balance: 5452.48
-  records:
-    date: 2014-07-03
-    type: BP
-    credit: true
-    amount: 45.0
-    detail: WILKINS A B
-    balance: 
-  records:
-    date: 2014-07-03
-    type: VIS
-    credit: false
-    amount: 13.5
-    detail: SERVICESYES
-    balance: 5483.98
-  records:
-    date: 2014-07-04
-    type: PIM
-    credit: true
-    amount: 440.0
-    detail: CASH IN HSBC JUL04
-    balance: 
-  records:
-    date: 2014-07-04
-    type: CR
-    credit: true
-    amount: 90.0
-    detail: CHQ IN AT HSBC BANK PLC
-    balance: 6013.98
-  records:
-    date: 2014-07-07
-    type: VIS
-    credit: false
-    amount: 43.37
-    detail: TESCO PAY AT PUMP
-    balance: 5970.61
+    - date: 2014-06-11
+      type: CHQ
+      credit: false
+      amount: 350.0
+      detail: 100000
+      balance: 
+    - date: 2014-06-11
+      type: BP
+      credit: true
+      amount: 45.0
+      detail: WILKINS A B
+      balance: 4786.7
+    - date: 2014-06-12
+      type: CHQ
+      credit: false
+      amount: 151.2
+      detail: 100001
+      balance: 4635.5
+    - date: 2014-06-14
+      type: PIM
+      credit: true
+      amount: 480.0
+      detail: CASH IN HSBC JUN14
+      balance: 5115.5
+    - date: 2014-06-16
+      type: DD
+      credit: false
+      amount: 9.9
+      detail: XYZ
+      balance: 
+    - date: 2014-06-16
+      type: VIS
+      credit: false
+      amount: 13.5
+      detail: SERVICESYES
+      balance: 
+    - date: 2014-06-16
+      type: CR
+      credit: true
+      amount: 45.0
+      detail: CHQ IN AT HSBC BANK PLC
+      balance: 5137.1
+    - date: 2014-06-18
+      type: BP
+      credit: true
+      amount: 45.0
+      detail: WILKINS A B
+      balance: 5182.1
+    - date: 2014-06-19
+      type: VIS
+      credit: false
+      amount: 27.62
+      detail: WILKINSON.COM
+      balance: 
+    - date: 2014-06-19
+      type: VIS
+      credit: false
+      amount: 50.05
+      detail: TESCO PAY AT PUMP
+      balance: 5104.43
+    - date: 2014-06-20
+      type: CR
+      credit: true
+      amount: 230.0
+      detail: CASH IN AT HSBC BANK PLC
+      balance: 
+    - date: 2014-06-20
+      type: CR
+      credit: true
+      amount: 45.0
+      detail: CHQ IN AT HSBC BANK PLC
+      balance: 5379.43
+    - date: 2014-06-25
+      type: DD
+      credit: false
+      amount: 15.2
+      detail: ABCD
+      balance: 5364.23
+    - date: 2014-06-26
+      type: SO
+      credit: false
+      amount: 200.0
+      detail: MISS J R SMITH
+      balance: 
+    - date: 2014-06-26
+      type: BP
+      credit: true
+      amount: 45.0
+      detail: WILKINS A B
+      balance: 5209.23
+    - date: 2014-06-27
+      type: BP
+      credit: true
+      amount: 25.0
+      detail: FISH SERVICE
+      balance: 
+    - date: 2014-06-27
+      type: VIS
+      credit: false
+      amount: 7.5
+      detail: HOUSE OF FRASER
+      balance: 5226.73
+    - date: 2014-06-28
+      type: PIM
+      credit: true
+      amount: 170.0
+      detail: CASH IN HSBC JUN28
+      balance: 5396.73
+    - date: 2014-06-30
+      type: VIS
+      credit: false
+      amount: 4.65
+      detail: WILKINSON
+      balance: 
+    - date: 2014-06-30
+      type: CR
+      credit: true
+      amount: 90.0
+      detail: CHQ IN AT HSBC BANK PLC
+      balance: 5482.08
+    - date: 2014-07-01
+      type: DD
+      credit: false
+      amount: 29.6
+      detail: POWERWASH AB
+      balance: 5452.48
+    - date: 2014-07-03
+      type: BP
+      credit: true
+      amount: 45.0
+      detail: WILKINS A B
+      balance: 
+    - date: 2014-07-03
+      type: VIS
+      credit: false
+      amount: 13.5
+      detail: SERVICESYES
+      balance: 5483.98
+    - date: 2014-07-04
+      type: PIM
+      credit: true
+      amount: 440.0
+      detail: CASH IN HSBC JUL04
+      balance: 
+    - date: 2014-07-04
+      type: CR
+      credit: true
+      amount: 90.0
+      detail: CHQ IN AT HSBC BANK PLC
+      balance: 6013.98
+    - date: 2014-07-07
+      type: VIS
+      credit: false
+      amount: 43.37
+      detail: TESCO PAY AT PUMP
+      balance: 5970.61

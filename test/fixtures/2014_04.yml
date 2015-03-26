@@ -3,170 +3,147 @@ bank_statement:
   sort_code: 12-34-56
   statement_date: 2014-04-08
   records:
-    date: 2014-03-12
-    type: CHQ
-    credit: false
-    amount: 250.0
-    detail: 100002
-    balance: 
-  records:
-    date: 2014-03-12
-    type: CHQ
-    credit: false
-    amount: 151.2
-    detail: 100003
-    balance: 2939.94
-  records:
-    date: 2014-03-14
-    type: PIM
-    credit: true
-    amount: 280.0
-    detail: CASH IN HSBC MAR14
-    balance: 
-  records:
-    date: 2014-03-14
-    type: VIS
-    credit: false
-    amount: 20.0
-    detail: ORANGE (A/PG/01)
-    balance: 
-  records:
-    date: 2014-03-14
-    type: CR
-    credit: true
-    amount: 180.0
-    detail: CHQ IN AT HSBC BANK PLC
-    balance: 3379.94
-  records:
-    date: 2014-03-15
-    type: BP
-    credit: true
-    amount: 45.0
-    detail: WILKINS A B
-    balance: 3424.94
-  records:
-    date: 2014-03-20
-    type: BP
-    credit: true
-    amount: 45.0
-    detail: WILKINS A B
-    balance: 3469.94
-  records:
-    date: 2014-03-21
-    type: ATM
-    credit: false
-    amount: 90.0
-    detail: CASH HSBC MAR21
-    balance: 
-  records:
-    date: 2014-03-21
-    type: PIM
-    credit: true
-    amount: 280.0
-    detail: CASH IN HSBC MAR21
-    balance: 3659.94
-  records:
-    date: 2014-03-25
-    type: DD
-    credit: false
-    amount: 15.2
-    detail: ABCD
-    balance: 
-  records:
-    date: 2014-03-25
-    type: SO
-    credit: false
-    amount: 37.0
-    detail: ABCDE
-    balance: 3607.74
-  records:
-    date: 2014-03-26
-    type: SO
-    credit: false
-    amount: 150.0
-    detail: MISS J R SMITHS
-    balance: 3457.74
-  records:
-    date: 2014-03-28
-    type: PIM
-    credit: true
-    amount: 310.0
-    detail: CASH IN HSBC MAR28
-    balance: 
-  records:
-    date: 2014-03-28
-    type: ATM
-    credit: false
-    amount: 50.0
-    detail: CASH HSBC MAR28
-    balance: 
-  records:
-    date: 2014-03-28
-    type: CR
-    credit: true
-    amount: 45.0
-    detail: CHQ IN AT HSBC BANK PLC
-    balance: 3762.74
-  records:
-    date: 2014-03-31
-    type: VIS
-    credit: false
-    amount: 48.89
-    detail: TESCO PAY AT PUMP
-    balance: 
-  records:
-    date: 2014-03-31
-    type: VIS
-    credit: false
-    amount: 148.67
-    detail: RENEWINSURANCE.COM
-    balance: 3565.18
-  records:
-    date: 2014-04-01
-    type: SO
-    credit: false
-    amount: 15.0
-    detail: SHEFFIELD PO
-    balance: 3550.18
-  records:
-    date: 2014-04-02
-    type: CHQ
-    credit: false
-    amount: 90.0
-    detail: 100004
-    balance: 
-  records:
-    date: 2014-04-02
-    type: BP
-    credit: true
-    amount: 90.0
-    detail: WILKINS A B
-    balance: 3550.18
-  records:
-    date: 2014-04-04
-    type: PIM
-    credit: true
-    amount: 300.0
-    detail: CASH IN HSBC APR04
-    balance: 
-  records:
-    date: 2014-04-04
-    type: VIS
-    credit: false
-    amount: 13.5
-    detail: SERVICESYES
-    balance: 
-  records:
-    date: 2014-04-04
-    type: CR
-    credit: true
-    amount: 395.0
-    detail: CHQ IN AT HSBC BANK PLC
-    balance: 4231.68
-  records:
-    date: 2014-04-07
-    type: CR
-    credit: true
-    amount: 27.11
-    detail: CASH IN AT
-    balance: 4258.79
+    - date: 2014-03-12
+      type: CHQ
+      credit: false
+      amount: 250.0
+      detail: 100002
+      balance: 
+    - date: 2014-03-12
+      type: CHQ
+      credit: false
+      amount: 151.2
+      detail: 100003
+      balance: 2939.94
+    - date: 2014-03-14
+      type: PIM
+      credit: true
+      amount: 280.0
+      detail: CASH IN HSBC MAR14
+      balance: 
+    - date: 2014-03-14
+      type: VIS
+      credit: false
+      amount: 20.0
+      detail: ORANGE (A/PG/01)
+      balance: 
+    - date: 2014-03-14
+      type: CR
+      credit: true
+      amount: 180.0
+      detail: CHQ IN AT HSBC BANK PLC
+      balance: 3379.94
+    - date: 2014-03-15
+      type: BP
+      credit: true
+      amount: 45.0
+      detail: WILKINS A B
+      balance: 3424.94
+    - date: 2014-03-20
+      type: BP
+      credit: true
+      amount: 45.0
+      detail: WILKINS A B
+      balance: 3469.94
+    - date: 2014-03-21
+      type: ATM
+      credit: false
+      amount: 90.0
+      detail: CASH HSBC MAR21
+      balance: 
+    - date: 2014-03-21
+      type: PIM
+      credit: true
+      amount: 280.0
+      detail: CASH IN HSBC MAR21
+      balance: 3659.94
+    - date: 2014-03-25
+      type: DD
+      credit: false
+      amount: 15.2
+      detail: ABCD
+      balance: 
+    - date: 2014-03-25
+      type: SO
+      credit: false
+      amount: 37.0
+      detail: ABCDE
+      balance: 3607.74
+    - date: 2014-03-26
+      type: SO
+      credit: false
+      amount: 150.0
+      detail: MISS J R SMITHS
+      balance: 3457.74
+    - date: 2014-03-28
+      type: PIM
+      credit: true
+      amount: 310.0
+      detail: CASH IN HSBC MAR28
+      balance: 
+    - date: 2014-03-28
+      type: ATM
+      credit: false
+      amount: 50.0
+      detail: CASH HSBC MAR28
+      balance: 
+    - date: 2014-03-28
+      type: CR
+      credit: true
+      amount: 45.0
+      detail: CHQ IN AT HSBC BANK PLC
+      balance: 3762.74
+    - date: 2014-03-31
+      type: VIS
+      credit: false
+      amount: 48.89
+      detail: TESCO PAY AT PUMP
+      balance: 
+    - date: 2014-03-31
+      type: VIS
+      credit: false
+      amount: 148.67
+      detail: RENEWINSURANCE.COM
+      balance: 3565.18
+    - date: 2014-04-01
+      type: SO
+      credit: false
+      amount: 15.0
+      detail: SHEFFIELD PO
+      balance: 3550.18
+    - date: 2014-04-02
+      type: CHQ
+      credit: false
+      amount: 90.0
+      detail: 100004
+      balance: 
+    - date: 2014-04-02
+      type: BP
+      credit: true
+      amount: 90.0
+      detail: WILKINS A B
+      balance: 3550.18
+    - date: 2014-04-04
+      type: PIM
+      credit: true
+      amount: 300.0
+      detail: CASH IN HSBC APR04
+      balance: 
+    - date: 2014-04-04
+      type: VIS
+      credit: false
+      amount: 13.5
+      detail: SERVICESYES
+      balance: 
+    - date: 2014-04-04
+      type: CR
+      credit: true
+      amount: 395.0
+      detail: CHQ IN AT HSBC BANK PLC
+      balance: 4231.68
+    - date: 2014-04-07
+      type: CR
+      credit: true
+      amount: 27.11
+      detail: CASH IN AT
+      balance: 4258.79
