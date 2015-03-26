@@ -19,10 +19,14 @@ module BankStatementParser
 
   # Base class for statement parsers
   #
-  # Subclasses must implement the following instance methods
+  # Subclasses **must** implement the following instance methods
+  #
+  # * bool handle_line(String line)
+  #
+  # Subclasses *may* override the following instance methods, but **must**
+  # remember to call the base class method from the override
   #
   # * void reset()
-  # * bool handle_line(String line)
   class Base
 
     require 'fileutils.rb'

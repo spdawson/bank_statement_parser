@@ -60,3 +60,41 @@ rescue StandardError => e
   puts "#{e}"
 end
 ```
+
+## Adding support for a new bank
+
+To add a parser for a new type of bank statement, simply subclass
+`BankStatementParser::Base` and implement the `handle_line()` method.
+
+Optionally, you can override the `reset()` method to perform class-specific
+reset work; however, you **must** remember to call the base class `reset()`
+from the override.
+
+An example parser follows.
+```rb
+class Barclays < BankStatementParser::Base
+
+  def handle_line line
+    # Keep going if we manage to parse the line
+    return true if do_something_with_line(line)
+
+    # Otherwise, halt the parser
+    return false
+  end
+
+  private
+
+  def reset
+    # Reset the base class
+    super
+
+    # Perform class-specific parser reset work here
+  end
+
+  def do_something_with_line line
+    # Implement class-specific line parsing here
+    return false
+  end
+
+end
+```
