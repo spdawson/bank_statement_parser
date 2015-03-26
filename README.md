@@ -48,8 +48,8 @@ begin
 
   # Statement metadata
   puts "Account number %s, sort code %s, statement date %s" %
-    [parser.sort_code,
-     parser.account_number,
+    [parser.account_number,
+     parser.sort_code,
      parser.statement_date.to_s]
 
   # Statement records
