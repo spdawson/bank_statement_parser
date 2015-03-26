@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = "bank_statement_parser"
-  s.version     = "0.0.5"
-  s.date        = "2015-03-25"
+  s.version     = "0.0.6"
+  s.date        = "2015-03-26"
   s.summary     = "Bank statement parser"
   s.description = "A gem for parsing bank statements"
   s.authors     = ["Simon Dawson"]
