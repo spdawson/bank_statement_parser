@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
                    "lib/bank_statement_parser/statement_record.rb",
                    "lib/bank_statement_parser/utils.rb"]
   s.executables << "bank_statement_to_yaml.rb"
+  s.executables << "bank_statement_to_text.sh"
   s.homepage    =
     "https://github.com/spdawson/bank_statement_parser"
   s.license     = "GPLv3"
