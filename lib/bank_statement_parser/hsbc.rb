@@ -65,7 +65,7 @@ module BankStatementParser
 
           # Parse statement date
           date_string = Regexp.last_match(:statement_date)
-          @statement_date = DateTime.parse(date_string)
+          @statement_date = Date.parse(date_string)
         elsif line =~ /\A(?<date_range_start>\d+\s+(?:#{MONTHS.join('|')})(?:\s+\d{4})?)\s+to\s+(?<date_range_end>\d+\s+(?:#{MONTHS.join('|')})\s+\d{4})\b/
           logger.debug { "Found statement date (2nd form)" }
           @statement_format = StatementFormat::FORMAT_2ND
@@ -75,7 +75,7 @@ module BankStatementParser
           logger.debug { "Found statement date range #{date_range_start}-#{date_range_end}" }
 
           # Parse range end date
-          @statement_date = DateTime.parse(date_range_end)
+          @statement_date = Date.parse(date_range_end)
         end
       end
 
@@ -162,7 +162,9 @@ module BankStatementParser
       #
       # We need to figure out the correct year, from the statement date.
       raise "No statement date" unless @statement_date
-      record_date = record_date.change(year: @statement_date.year)
+      record_date = Date.new(@statement_date.year,
+                             record_date.month,
+                             record_date.day)
       logger.debug { "record date #{record_date}" }
       if @statement_date.month != record_date.month
         logger.debug { "record month differs from statement month" }
@@ -307,7 +309,7 @@ module BankStatementParser
       date_string = col_fragments[0]
       unless date_string.nil?
         begin
-          @cached_statement_date = DateTime.parse(date_string)
+          @cached_statement_date = Date.parse(date_string)
           @cached_statement_date =
             fix_record_date_year(@cached_statement_date)
         rescue ArgumentError => e
