@@ -27,28 +27,12 @@ class BankStatementParserTest < Minitest::Test
     Dir.glob('test/data/*.txt') do |statement_file|
       fixture_file =
         'test/fixtures/' + File.basename(statement_file, '.txt') + '.yml'
-      fixture = YAML.load_file fixture_file
-      bs = fixture['bank_statement']
+      bs = YAML.load_file fixture_file
 
       parser = BankStatementParser::HSBC.new
       parser.parse statement_file
 
-      bank_statement = parser.bank_statement
-
-      assert_equal bs['account_number'].to_s, bank_statement.account_number
-      assert_equal bs['sort_code'], bank_statement.sort_code
-      assert_equal bs['statement_date'], bank_statement.statement_date
-
-      bs['records'].each_index do |index|
-        parsed_i = bank_statement.records[index]
-        expected_i = bs['records'][index]
-        assert_equal expected_i['date'], parsed_i.date
-        assert_equal expected_i['type'], parsed_i.type
-        assert_equal expected_i['credit'], parsed_i.credit
-        assert_equal expected_i['amount'], parsed_i.amount
-        assert_equal expected_i['detail'].to_s, parsed_i.detail
-        assert_equal expected_i['balance'], parsed_i.balance
-      end
+      assert_equal bs, parser.bank_statement
     end
 
   end
