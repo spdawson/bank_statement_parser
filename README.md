@@ -102,3 +102,9 @@ class Barclays < BankStatementParser::Base
 
 end
 ```
+
+## HSBC statements
+
+HSBC statements produced from 13 July 2014 are available in PDF format. Earlier statements can be "printed" from the web view, and thus saved as PDF. This parser should work with either of these types of statement, following conversion from PDF to plain text.
+
+A utility script `bank_statement_to_text.sh` is provided, which uses `pdftotext(1)` to convert a statement PDF to a plain text file suitable for parsing.
