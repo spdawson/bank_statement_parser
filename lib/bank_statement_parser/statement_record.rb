@@ -15,6 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
+require 'yaml'
+
 module BankStatementParser
 
   # A bank statement record
@@ -35,12 +37,7 @@ module BankStatementParser
 
     # Stringify
     def to_s
-      "%s:%s:%s:%s:%s:%s" % [date,
-                             type,
-                             credit.to_s,
-                             (amount || ''),
-                             detail,
-                             (balance || '')]
+      to_yaml
     end
 
     # Equality test
