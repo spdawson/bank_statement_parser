@@ -19,6 +19,8 @@
 # You should have received a copy of the GNU General Public License
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
+require 'yaml'
+
 require 'bank_statement_parser'
 
 parser = BankStatementParser::HSBC.new
@@ -26,25 +28,4 @@ parser = BankStatementParser::HSBC.new
 # Attempt to parse the specified file
 parser.parse ARGV[0]
 
-bank_statement = parser.bank_statement
-
-# Statement metadata
-puts <<METADATA
-bank_statement:
-  account_number: #{bank_statement.account_number}
-  sort_code: #{bank_statement.sort_code}
-  statement_date: #{bank_statement.statement_date}
-  records:
-METADATA
-
-# Statement records
-bank_statement.records.each do |record|
-  puts <<RECORD
-    - date: #{record.date}
-      type: #{record.type}
-      credit: #{record.credit}
-      amount: #{record.amount || ''}
-      detail: #{record.detail}
-      balance: #{record.balance || ''}
-RECORD
-end
+puts YAML.dump(parser.bank_statement)
