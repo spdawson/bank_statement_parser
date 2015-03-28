@@ -15,6 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
+require 'bank_statement_parser/bank_statement'
+
 module BankStatementParser
 
   # Base class for statement parsers
@@ -31,7 +33,7 @@ module BankStatementParser
 
     require 'fileutils.rb'
 
-    attr_accessor :sort_code, :account_number, :statement_date, :records
+    attr_accessor :bank_statement
 
     # Constructor
     def initialize
@@ -53,9 +55,9 @@ module BankStatementParser
       end
 
       # Sanity checking
-      raise "Failed to find sort code" if @sort_code.nil?
-      raise "Failed to find account number" if @account_number.nil?
-      raise "Failed to find statement date" if @statement_date.nil?
+      raise "Failed to find sort code" if sort_code.nil?
+      raise "Failed to find account number" if account_number.nil?
+      raise "Failed to find statement date" if statement_date.nil?
     end
 
     protected
@@ -67,10 +69,55 @@ module BankStatementParser
 
     # Reset the parser
     def reset
-      @sort_code = nil
-      @account_number = nil
-      @statement_date = nil
-      @records = []
+      @bank_statement = BankStatement.new
+    end
+
+    # @todo FIXME: Why can't we use Forwardable for these methods?
+    #
+    # Partially works, but doesn't seem to be accessible from subclasses...
+
+    def sort_code
+      @bank_statement.sort_code
+    end
+
+    def sort_code= sort_code
+      @bank_statement.sort_code = sort_code
+    end
+
+    def account_number
+      @bank_statement.account_number
+    end
+
+    def account_number= account_number
+      @bank_statement.account_number = account_number
+    end
+
+    def statement_date
+      @bank_statement.statement_date
+    end
+
+    def statement_date= statement_date
+      @bank_statement.statement_date = statement_date
+    end
+
+    def opening_balance
+      @bank_statement.opening_balance
+    end
+
+    def opening_balance= opening_balance
+      @bank_statement.opening_balance = opening_balance
+    end
+
+    def closing_balance
+      @bank_statement.closing_balance
+    end
+
+    def closing_balance= closing_balance
+      @bank_statement.closing_balance = closing_balance
+    end
+
+    def add_record record
+      @bank_statement.records << record
     end
 
   end

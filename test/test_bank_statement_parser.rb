@@ -33,12 +33,14 @@ class BankStatementParserTest < Minitest::Test
       parser = BankStatementParser::HSBC.new
       parser.parse statement_file
 
-      assert_equal bs['account_number'].to_s, parser.account_number
-      assert_equal bs['sort_code'], parser.sort_code
-      assert_equal bs['statement_date'], parser.statement_date
+      bank_statement = parser.bank_statement
+
+      assert_equal bs['account_number'].to_s, bank_statement.account_number
+      assert_equal bs['sort_code'], bank_statement.sort_code
+      assert_equal bs['statement_date'], bank_statement.statement_date
 
       bs['records'].each_index do |index|
-        parsed_i = parser.records[index]
+        parsed_i = bank_statement.records[index]
         expected_i = bs['records'][index]
         assert_equal expected_i['date'], parsed_i.date
         assert_equal expected_i['type'], parsed_i.type

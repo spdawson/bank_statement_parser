@@ -47,13 +47,14 @@ begin
   parser.parse(file_path)
 
   # Statement metadata
+  bank_statement = parser.bank_statement
   puts "Account number %s, sort code %s, statement date %s" %
-    [parser.account_number,
-     parser.sort_code,
-     parser.statement_date.to_s]
+    [bank_statement.account_number,
+     bank_statement.sort_code,
+     bank_statement.statement_date.to_s]
 
   # Statement records
-  parser.records.each do |record|
+  bank_statement.records.each do |record|
     puts "Statement record #{record}"
   end
 rescue StandardError => e

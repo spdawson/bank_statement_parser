@@ -1,7 +1,3 @@
-#!/usr/bin/env ruby
-#
-# Parse the specified HSBC bank statement file to YAML
-
 # Copyright 2015 Simon Dawson <spdawson@gmail.com>
 
 # This file is part of bank_statement_parser.
@@ -19,32 +15,34 @@
 # You should have received a copy of the GNU General Public License
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
-require 'bank_statement_parser'
+require 'yaml'
 
-parser = BankStatementParser::HSBC.new
+module BankStatementParser
 
-# Attempt to parse the specified file
-parser.parse ARGV[0]
+  # A bank statement
+  class BankStatement
+    attr_accessor :sort_code, :account_number, :statement_date,
+      :opening_balance, :closing_balance, :records
 
-bank_statement = parser.bank_statement
+    # Constructor
+    def initialize
+      @records = []
+    end
 
-# Statement metadata
-puts <<METADATA
-bank_statement:
-  account_number: #{bank_statement.account_number}
-  sort_code: #{bank_statement.sort_code}
-  statement_date: #{bank_statement.statement_date}
-  records:
-METADATA
+    # Stringify
+    def to_s
+      to_yaml
+    end
 
-# Statement records
-bank_statement.records.each do |record|
-  puts <<RECORD
-    - date: #{record.date}
-      type: #{record.type}
-      credit: #{record.credit}
-      amount: #{record.amount || ''}
-      detail: #{record.detail}
-      balance: #{record.balance || ''}
-RECORD
+    # Equality test
+    def ==(other)
+      super || (sort_code == other.sort_code &&
+                account_number == other.account_number &&
+                statement_date == other.statement_date &&
+                opening_balance == other.opening_balance &&
+                closing_balance == other.closing_balance &&
+                records == other.records)
+    end
+  end
+
 end

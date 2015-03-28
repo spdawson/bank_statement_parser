@@ -17,6 +17,7 @@
 
 require 'date'
 require 'bank_statement_parser/base'
+require 'bank_statement_parser/statement_record'
 require 'bank_statement_parser/utils'
 module BankStatementParser
 
@@ -49,23 +50,23 @@ module BankStatementParser
 
       # Look for sort code and account number lines, if we haven't found
       # one yet
-      if @sort_code.nil? && @account_number.nil?
+      if sort_code.nil? && account_number.nil?
         if line =~ /(?:\A[A-Z][\w\s]+|,)\s+(?<sort_code>\d{2}-\d{2}-\d{2})\s+(?<account_number>\d{8})(?:\s*|\s+\d+)\z/
           logger.debug { "Found sort code and account number" }
-          @sort_code = Regexp.last_match(:sort_code)
-          @account_number = Regexp.last_match(:account_number)
+          self.sort_code = Regexp.last_match(:sort_code)
+          self.account_number = Regexp.last_match(:account_number)
         end
       end
 
       # Look for statement date lines, if we haven't found one yet
-      if @statement_date.nil?
+      if statement_date.nil?
         if line =~ /\A\s*(?<statement_date>\d{2} (?:#{MONTHS.map{|m| m[0,3]}.join('|')}) \d{4})\s*\z/
           logger.debug { "Found statement date (1st form)" }
           @statement_format = StatementFormat::FORMAT_1ST
 
           # Parse statement date
           date_string = Regexp.last_match(:statement_date)
-          @statement_date = Date.parse(date_string)
+          self.statement_date = Date.parse(date_string)
         elsif line =~ /\A(?<date_range_start>\d+\s+(?:#{MONTHS.join('|')})(?:\s+\d{4})?)\s+to\s+(?<date_range_end>\d+\s+(?:#{MONTHS.join('|')})\s+\d{4})\b/
           logger.debug { "Found statement date (2nd form)" }
           @statement_format = StatementFormat::FORMAT_2ND
@@ -75,11 +76,11 @@ module BankStatementParser
           logger.debug { "Found statement date range #{date_range_start}-#{date_range_end}" }
 
           # Parse range end date
-          @statement_date = Date.parse(date_range_end)
+          self.statement_date = Date.parse(date_range_end)
         end
       end
 
-      if !@sort_code.nil? && !@account_number.nil? && !@statement_date.nil?
+      if !sort_code.nil? && !account_number.nil? && !statement_date.nil?
 
         # Look for statement records proper
         headings = nil
@@ -161,14 +162,14 @@ module BankStatementParser
       # The date we have parsed will have the year set to the current year.
       #
       # We need to figure out the correct year, from the statement date.
-      raise "No statement date" unless @statement_date
-      record_date = Date.new(@statement_date.year,
+      raise "No statement date" unless statement_date
+      record_date = Date.new(statement_date.year,
                              record_date.month,
                              record_date.day)
       logger.debug { "record date #{record_date}" }
-      if @statement_date.month != record_date.month
+      if statement_date.month != record_date.month
         logger.debug { "record month differs from statement month" }
-        if 1 == @statement_date.month
+        if 1 == statement_date.month
           # Assume that the statement crosses a year boundary: the record
           # must be from the end of the previous year
           raise "Expected a record from December" unless
@@ -371,7 +372,7 @@ module BankStatementParser
                                      detail: full_details,
                                      balance: balance)
         logger.debug { "Created statement record: #{record}" }
-        @records << record
+        add_record record
 
         @cached_payment_type = nil
         @cached_details = []
