@@ -52,6 +52,9 @@ begin
     [bank_statement.account_number,
      bank_statement.sort_code,
      bank_statement.statement_date.to_s]
+  puts "Opening balance %f, closing balance %f" %
+    [bank_statement.opening_balance,
+     bank_statement.closing_balance]
 
   # Statement records
   bank_statement.records.each do |record|
