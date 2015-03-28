@@ -321,10 +321,32 @@ module BankStatementParser
       payment_type_and_details = col_fragments[1]
 
       if payment_type_and_details =~ /\ABALANCE CARRIED FORWARD\z/i
+        cb = col_fragments[4]
+        unless cb.nil?
+          if cb =~ /\s+D\z/
+            # Overdrawn; remove suffix and make negative
+            cb = '-' + cb.sub(/\s+D\z/, '')
+          end
+          cb = cb.delete(",").to_f
+          self.closing_balance = cb
+          logger.debug { "Found potential closing balance: #{cb}" }
+        end
         logger.debug { "Pausing parser" }
         @parser_paused = true
         return
       elsif payment_type_and_details =~ /\ABALANCE BROUGHT FORWARD\z/i
+        if opening_balance.nil?
+          ob = col_fragments[4]
+          unless ob.nil?
+            if ob =~ /\s+D\z/
+              # Overdrawn; remove suffix and make negative
+              ob = '-' + ob.sub(/\s+D\z/, '')
+            end
+            ob = ob.delete(",").to_f
+            self.opening_balance = ob
+            logger.debug { "Found probable opening balance: #{ob}" }
+          end
+        end
         if @parser_paused
           logger.debug { "Resuming parser" }
           @parser_paused = false
