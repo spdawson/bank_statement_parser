@@ -1,17 +1,19 @@
-bank_statement:
-  account_number: 12345678
-  sort_code: 12-34-56
-  statement_date: 2009-04-23
-  records:
-    - date: 2009-04-01
-      type: CR
-      credit: true
-      amount: 100.0
-      detail: WILSON AN
-      balance: 943.7
-    - date: 2009-04-13
-      type: DR
-      credit: false
-      amount: 14.5
-      detail: DEBIT INTEREST
-      balance: 958.2
+--- !ruby/object:BankStatementParser::BankStatement
+records:
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2009-04-01
+  type: CR
+  credit: true
+  amount: 100.0
+  detail: WILSON AN
+  balance: 943.7
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2009-04-13
+  type: DR
+  credit: false
+  amount: 14.5
+  detail: DEBIT INTEREST
+  balance: 958.2
+sort_code: 12-34-56
+account_number: '12345678'
+statement_date: 2009-04-23

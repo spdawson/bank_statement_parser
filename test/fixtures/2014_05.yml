@@ -1,203 +1,236 @@
-bank_statement:
-  account_number: 12345678
-  sort_code: 12-34-56
-  statement_date: 2014-06-08
-  records:
-    - date: 2014-05-09
-      type: PIM
-      credit: true
-      amount: 215.0
-      detail: CASH IN HSBC MAY09
-      balance: 
-    - date: 2014-05-09
-      type: CR
-      credit: true
-      amount: 45.0
-      detail: CHQ IN AT HSBC BANK PLC
-      balance: 4660.43
-    - date: 2014-05-12
-      type: VIS
-      credit: false
-      amount: 11.6
-      detail: WESTON EASTERN ONE
-      balance: 4648.83
-    - date: 2014-05-14
-      type: TFR
-      credit: false
-      amount: 200.0
-      detail: 123456 12345678
-      balance: 
-    - date: 2014-05-14
-      type: BP
-      credit: false
-      amount: 70.2
-      detail: HMRC NICO
-      balance: 
-    - date: 2014-05-14
-      type: BP
-      credit: true
-      amount: 45.0
-      detail: WILKINS A B
-      balance: 4423.63
-    - date: 2014-05-15
-      type: CHQ
-      credit: false
-      amount: 151.2
-      detail: 100006
-      balance: 
-    - date: 2014-05-15
-      type: VIS
-      credit: false
-      amount: 45.0
-      detail: TESCO STORES 1234
-      balance: 4227.43
-    - date: 2014-05-16
-      type: DD
-      credit: false
-      amount: 9.58
-      detail: ABC
-      balance: 
-    - date: 2014-05-16
-      type: CHQ
-      credit: false
-      amount: 200.0
-      detail: 100007
-      balance: 
-    - date: 2014-05-16
-      type: BP
-      credit: false
-      amount: 80.0
-      detail: J R SMITHS
-      balance: 3937.85
-    - date: 2014-05-17
-      type: PIM
-      credit: true
-      amount: 235.0
-      detail: CASH IN HSBC MAY17
-      balance: 
-    - date: 2014-05-17
-      type: ATM
-      credit: false
-      amount: 180.0
-      detail: CASH HSBC MAY17
-      balance: 3992.85
-    - date: 2014-05-18
-      type: BP
-      credit: false
-      amount: 107.0
-      detail: MISS Z X MILKS
-      balance: 3885.85
-    - date: 2014-05-19
-      type: CR
-      credit: true
-      amount: 45.0
-      detail: CHQ IN AT HSBC BANK PLC
-      balance: 
-    - date: 2014-05-19
-      type: VIS
-      credit: false
-      amount: 40.1
-      detail: TESCO PAY AT PUMP
-      balance: 3890.75
-    - date: 2014-05-22
-      type: BP
-      credit: true
-      amount: 45.0
-      detail: WILKINS A B
-      balance: 3935.75
-    - date: 2014-05-23
-      type: CHQ
-      credit: false
-      amount: 15.0
-      detail: 100008
-      balance: 
-    - date: 2014-05-23
-      type: PIM
-      credit: true
-      amount: 365.0
-      detail: CASH IN HSBC MAY23
-      balance: 4285.75
-    - date: 2014-05-27
-      type: DD
-      credit: false
-      amount: 15.2
-      detail: ABCD
-      balance: 
-    - date: 2014-05-27
-      type: SO
-      credit: false
-      amount: 150.0
-      detail: MISS J R SMITHS
-      balance: 
-    - date: 2014-05-27
-      type: VIS
-      credit: false
-      amount: 9.25
-      detail: PAPERCHASE
-      balance: 4111.3
-    - date: 2014-05-28
-      type: BP
-      credit: true
-      amount: 45.0
-      detail: WILKINS A B
-      balance: 4156.3
-    - date: 2014-05-29
-      type: CHQ
-      credit: false
-      amount: 200.0
-      detail: 100009
-      balance: 3956.3
-    - date: 2014-05-30
-      type: PIM
-      credit: true
-      amount: 305.0
-      detail: CASH IN HSBC MAY30
-      balance: 
-    - date: 2014-05-30
-      type: CR
-      credit: true
-      amount: 45.0
-      detail: CHQ IN AT HSBC BANK PLC
-      balance: 4306.3
-    - date: 2014-06-01
-      type: BP
-      credit: false
-      amount: 45.0
-      detail: VWXY
-      balance: 4261.3
-    - date: 2014-06-02
-      type: DD
-      credit: false
-      amount: 29.6
-      detail: POWERWASH AB
-      balance: 
-    - date: 2014-06-02
-      type: SO
-      credit: false
-      amount: 15.0
-      detail: SHEFFIELD PO
-      balance: 
-    - date: 2014-06-02
-      type: BP
-      credit: true
-      amount: 50.0
-      detail: FISH SERVICE
-      balance: 4266.7
-    - date: 2014-06-06
-      type: CR
-      credit: true
-      amount: 665.0
-      detail: CASH IN AT HSBC BANK PLC
-      balance: 
-    - date: 2014-06-06
-      type: BP
-      credit: true
-      amount: 45.0
-      detail: WILKINS A B
-      balance: 
-    - date: 2014-06-06
-      type: CR
-      credit: true
-      amount: 115.0
-      detail: CHQ IN AT HSBC BANK PLC
-      balance: 5091.7
+--- !ruby/object:BankStatementParser::BankStatement
+records:
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-09
+  type: PIM
+  credit: true
+  amount: 215.0
+  detail: CASH IN HSBC MAY09
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-09
+  type: CR
+  credit: true
+  amount: 45.0
+  detail: CHQ IN AT HSBC BANK PLC
+  balance: 4660.43
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-12
+  type: VIS
+  credit: false
+  amount: 11.6
+  detail: WESTON EASTERN ONE
+  balance: 4648.83
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-14
+  type: TFR
+  credit: false
+  amount: 200.0
+  detail: 123456 12345678
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-14
+  type: BP
+  credit: false
+  amount: 70.2
+  detail: HMRC NICO
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-14
+  type: BP
+  credit: true
+  amount: 45.0
+  detail: WILKINS A B
+  balance: 4423.63
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-15
+  type: CHQ
+  credit: false
+  amount: 151.2
+  detail: '100006'
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-15
+  type: VIS
+  credit: false
+  amount: 45.0
+  detail: TESCO STORES 1234
+  balance: 4227.43
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-16
+  type: DD
+  credit: false
+  amount: 9.58
+  detail: ABC
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-16
+  type: CHQ
+  credit: false
+  amount: 200.0
+  detail: '100007'
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-16
+  type: BP
+  credit: false
+  amount: 80.0
+  detail: J R SMITHS
+  balance: 3937.85
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-17
+  type: PIM
+  credit: true
+  amount: 235.0
+  detail: CASH IN HSBC MAY17
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-17
+  type: ATM
+  credit: false
+  amount: 180.0
+  detail: CASH HSBC MAY17
+  balance: 3992.85
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-18
+  type: BP
+  credit: false
+  amount: 107.0
+  detail: MISS Z X MILKS
+  balance: 3885.85
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-19
+  type: CR
+  credit: true
+  amount: 45.0
+  detail: CHQ IN AT HSBC BANK PLC
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-19
+  type: VIS
+  credit: false
+  amount: 40.1
+  detail: TESCO PAY AT PUMP
+  balance: 3890.75
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-22
+  type: BP
+  credit: true
+  amount: 45.0
+  detail: WILKINS A B
+  balance: 3935.75
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-23
+  type: CHQ
+  credit: false
+  amount: 15.0
+  detail: '100008'
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-23
+  type: PIM
+  credit: true
+  amount: 365.0
+  detail: CASH IN HSBC MAY23
+  balance: 4285.75
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-27
+  type: DD
+  credit: false
+  amount: 15.2
+  detail: ABCD
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-27
+  type: SO
+  credit: false
+  amount: 150.0
+  detail: MISS J R SMITHS
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-27
+  type: VIS
+  credit: false
+  amount: 9.25
+  detail: PAPERCHASE
+  balance: 4111.3
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-28
+  type: BP
+  credit: true
+  amount: 45.0
+  detail: WILKINS A B
+  balance: 4156.3
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-29
+  type: CHQ
+  credit: false
+  amount: 200.0
+  detail: '100009'
+  balance: 3956.3
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-30
+  type: PIM
+  credit: true
+  amount: 305.0
+  detail: CASH IN HSBC MAY30
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-05-30
+  type: CR
+  credit: true
+  amount: 45.0
+  detail: CHQ IN AT HSBC BANK PLC
+  balance: 4306.3
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-06-01
+  type: BP
+  credit: false
+  amount: 45.0
+  detail: VWXY
+  balance: 4261.3
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-06-02
+  type: DD
+  credit: false
+  amount: 29.6
+  detail: POWERWASH AB
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-06-02
+  type: SO
+  credit: false
+  amount: 15.0
+  detail: SHEFFIELD PO
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-06-02
+  type: BP
+  credit: true
+  amount: 50.0
+  detail: FISH SERVICE
+  balance: 4266.7
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-06-06
+  type: CR
+  credit: true
+  amount: 665.0
+  detail: CASH IN AT HSBC BANK PLC
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-06-06
+  type: BP
+  credit: true
+  amount: 45.0
+  detail: WILKINS A B
+  balance: 
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-06-06
+  type: CR
+  credit: true
+  amount: 115.0
+  detail: CHQ IN AT HSBC BANK PLC
+  balance: 5091.7
+sort_code: 12-34-56
+account_number: '12345678'
+statement_date: 2014-06-08

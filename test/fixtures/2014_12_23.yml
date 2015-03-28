@@ -1,12 +1,14 @@
-bank_statement:
-  account_number: 12345678
-  sort_code: 12-34-56
-  statement_date: 2014-12-23
-  records:
-    - date: 2014-12-12
-      type: CR
-      credit: true
-      amount: 1207.44
-      detail: BIG PIES LTD
-REFUND
-      balance: 1740.72
+--- !ruby/object:BankStatementParser::BankStatement
+records:
+- !ruby/object:BankStatementParser::StatementRecord
+  date: 2014-12-12
+  type: CR
+  credit: true
+  amount: 1207.44
+  detail: |-
+    BIG PIES LTD
+    REFUND
+  balance: 1740.72
+statement_date: 2014-12-23
+sort_code: 12-34-56
+account_number: '12345678'
