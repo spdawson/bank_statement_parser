@@ -185,3 +185,5 @@ records:
 sort_code: 12-34-56
 account_number: '12345678'
 statement_date: 2014-07-08
+opening_balance: 5091.7
+closing_balance: 5970.61
