@@ -1,6 +1,10 @@
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'bank_statement_parser/version'
+
 Gem::Specification.new do |s|
   s.name        = "bank_statement_parser"
-  s.version     = "0.1.4"
+  s.version     = BankStatementParser::VERSION
   s.date        = "2015-03-29"
   s.summary     = "Bank statement parser"
   s.description = "A gem for parsing bank statements"
@@ -19,4 +23,6 @@ Gem::Specification.new do |s|
   s.license     = "GPLv3"
   s.required_ruby_version = ">= 2.0"
   s.requirements << "pdftotext(1)"
+
+  s.add_development_dependency "rake"
 end
