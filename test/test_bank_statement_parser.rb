@@ -29,10 +29,9 @@ class BankStatementParserTest < Minitest::Test
         'test/fixtures/' + File.basename(statement_file, '.txt') + '.yml'
       bs = YAML.load_file fixture_file
 
-      parser = BankStatementParser::HSBC.new
-      parser.parse statement_file
+      parsed_bs = BankStatementParser.parse statement_file
 
-      assert_equal bs, parser.bank_statement
+      assert_equal bs, parsed_bs
     end
 
   end

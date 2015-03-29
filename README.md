@@ -41,13 +41,11 @@ require 'bank_statement_parser'
 # Plain text statement file path
 file_path = 'January_2011.txt'
 
-parser = BankStatementParser::HSBC.new
 begin
   # Attempt to parse the file
-  parser.parse(file_path)
+  bank_statement = BankStatementParser.parse file_path
 
   # Statement metadata
-  bank_statement = parser.bank_statement
   puts "Account number %s, sort code %s, statement date %s" %
     [bank_statement.account_number,
      bank_statement.sort_code,
