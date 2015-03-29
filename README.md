@@ -46,8 +46,9 @@ begin
   bank_statement = BankStatementParser.parse file_path
 
   # Statement metadata
-  puts "Account number %s, sort code %s, statement date %s" %
-    [bank_statement.account_number,
+  puts "Name %s, account number %s, sort code %s, statement date %s" %
+    [bank_statement.name,
+     bank_statement.account_number,
      bank_statement.sort_code,
      bank_statement.statement_date.to_s]
   puts "Opening balance %f, closing balance %f" %

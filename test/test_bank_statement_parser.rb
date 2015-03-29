@@ -31,7 +31,7 @@ class BankStatementParserTest < Minitest::Test
 
       parsed_bs = BankStatementParser.parse statement_file
 
-      assert_equal bs, parsed_bs
+      assert_equal bs, parsed_bs, "Failed to parse #{statement_file}"
     end
 
   end

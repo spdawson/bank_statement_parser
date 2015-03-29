@@ -21,7 +21,7 @@ module BankStatementParser
 
   # A bank statement
   class BankStatement
-    attr_accessor :sort_code, :account_number, :statement_date,
+    attr_accessor :name, :sort_code, :account_number, :statement_date,
       :opening_balance, :closing_balance, :records
 
     # Constructor
@@ -36,7 +36,8 @@ module BankStatementParser
 
     # Equality test
     def ==(other)
-      super || (sort_code == other.sort_code &&
+      super || (name == other.name &&
+                sort_code == other.sort_code &&
                 account_number == other.account_number &&
                 statement_date == other.statement_date &&
                 opening_balance == other.opening_balance &&

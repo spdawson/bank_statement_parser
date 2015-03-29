@@ -76,6 +76,14 @@ module BankStatementParser
     #
     # Partially works, but doesn't seem to be accessible from subclasses...
 
+    def name
+      @bank_statement.name
+    end
+
+    def name= name
+      @bank_statement.name = name
+    end
+
     def sort_code
       @bank_statement.sort_code
     end

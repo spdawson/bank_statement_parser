@@ -55,6 +55,16 @@ module BankStatementParser
           logger.debug { "Found sort code and account number" }
           self.sort_code = Regexp.last_match(:sort_code)
           self.account_number = Regexp.last_match(:account_number)
+
+          if line =~ /^\s*(?<account_name>.+)\s+(\d{2}-\d{2}-\d{2})\s+(\d{8})\s+(\d+)\s*$/
+            # New-style metadata line, first field is account [holder] name
+            self.name = Regexp.last_match(:account_name).strip
+            logger.debug { "Found account holder name (2nd form): #{self.name}" }
+          elsif line =~ /^\s*(?<account_name>.+)\s*,\s+(\d{2}-\d{2}-\d{2})\s+(\d{8})\s*$/
+            # Old-style metadata line, first field is account [holder] name
+            self.name = Regexp.last_match(:account_name).strip
+            logger.debug { "Found account holder name (1st form): #{self.name}" }
+          end
         end
       end
 
