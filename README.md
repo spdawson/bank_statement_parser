@@ -107,3 +107,20 @@ end
 HSBC statements produced from 13 July 2014 are available in PDF format. Earlier statements can be "printed" from the web view, and thus saved as PDF. This parser should work with either of these types of statement, following conversion from PDF to plain text.
 
 A utility script `bank_statement_to_text.sh` is provided, which uses `pdftotext(1)` to convert a statement PDF to a plain text file suitable for parsing.
+
+## License
+
+Copyright 2015 Simon Dawson <spdawson@gmail.com>
+
+bank_statement_parser is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+bank_statement_parser is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
