@@ -45,13 +45,21 @@ module BankStatementParser
     def parse path
       reset
 
-      # Is the path a URI?
-      full_text = if path =~ URI::regexp(%w(ftp http https))
-                    open(path).read
+      full_text = case path
+                  when String
+                    # Is the path a URI?
+                    if path =~ URI::regexp(%w(ftp http https))
+                      open(path).read
+                    else
+                      raise "Expected a text file path" unless
+                        path =~ /\.txt\z/
+                      # Grab the full text file content (utf-8)
+                      read(path)
+                    end
+                  when IO, Pathname, URI
+                    path.read
                   else
-                    raise "Expected a text file path" unless path =~ /\.txt\z/
-                    # Grab the full text file content (utf-8)
-                    read(path)
+                    raise ArgumentError, "Expected String, IO, Pathname or URI"
                   end
 
       # Process each line in turn

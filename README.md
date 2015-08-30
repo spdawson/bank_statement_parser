@@ -75,6 +75,9 @@ statement_uri = 'http://statement.bank.com/mine/2011/01.txt'
 bank_statement = BankStatementParser.parse statement_uri
 ```
 
+The `BankStatementParser.parse` method can be passed a `String`, `IO`,
+`Pathname` or `URI`.
+
 ## Adding support for a new bank
 
 To add a parser for a new type of bank statement, simply subclass
