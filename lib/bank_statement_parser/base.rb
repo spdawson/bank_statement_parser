@@ -15,6 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
+require 'open-uri'
 require 'bank_statement_parser/bank_statement'
 
 module BankStatementParser
@@ -42,12 +43,16 @@ module BankStatementParser
 
     # Parse the specified text file
     def parse path
-      raise "Expected a text file path" unless path =~ /\.txt\z/
-
       reset
 
-      # Grab the full text file content (utf-8)
-      full_text = File.read(path)
+      # Is the path a URI?
+      full_text = if path =~ URI::regexp(%w(ftp http https))
+                    open(path).read
+                  else
+                    raise "Expected a text file path" unless path =~ /\.txt\z/
+                    # Grab the full text file content (utf-8)
+                    read(path)
+                  end
 
       # Process each line in turn
       full_text.split("\n").each do |line|

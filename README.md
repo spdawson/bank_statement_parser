@@ -35,6 +35,8 @@ BankStatementParser.logger = Rails.logger
 
 ## Example
 
+Parse a statement file from the local filesystem:
+
 ```ruby
 require 'bank_statement_parser'
 
@@ -62,6 +64,15 @@ begin
 rescue StandardError => e
   puts "#{e}"
 end
+```
+
+Parse a statement file from an FTP, HTTP or HTTPS server:
+
+```ruby
+require 'bank_statement_parser'
+
+statement_uri = 'http://statement.bank.com/mine/2011/01.txt'
+bank_statement = BankStatementParser.parse statement_uri
 ```
 
 ## Adding support for a new bank
