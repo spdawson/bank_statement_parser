@@ -54,7 +54,7 @@ module BankStatementParser
                       raise "Expected a text file path" unless
                         path =~ /\.txt\z/
                       # Grab the full text file content (utf-8)
-                      read(path)
+                      File.read(path)
                     end
                   when IO, Pathname, URI
                     path.read
