@@ -56,7 +56,7 @@ module BankStatementParser
                       # Grab the full text file content (utf-8)
                       File.read(path)
                     end
-                  when IO, Pathname, URI
+                  when File, IO, Pathname, Tempfile, URI
                     path.read
                   else
                     raise ArgumentError, "Expected String, IO, Pathname or URI"
