@@ -16,6 +16,7 @@
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
 require 'open-uri'
+require 'stringio'
 require 'bank_statement_parser/bank_statement'
 
 module BankStatementParser
@@ -56,7 +57,7 @@ module BankStatementParser
                       # Grab the full text file content (utf-8)
                       File.read(path)
                     end
-                  when File, IO, Tempfile
+                  when File, IO, StringIO, Tempfile
                     path.rewind
                     path.read
                   when Pathname, URI

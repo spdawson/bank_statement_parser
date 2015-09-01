@@ -75,8 +75,9 @@ statement_uri = 'http://statement.bank.com/mine/2011/01.txt'
 bank_statement = BankStatementParser.parse statement_uri
 ```
 
-The `BankStatementParser.parse` method can be passed a `String`, `IO`,
-`Pathname` or `URI`.
+The `BankStatementParser.parse` method can be passed a `String`, `File`, `IO`,
+`Pathname`, `StringIO`, `Tempfile` or `URI`. A `String` is interpreted as a
+file path, or as a URI if it has a `ftp://`, `http://` or `https://` prefix.
 
 ## Adding support for a new bank
 
