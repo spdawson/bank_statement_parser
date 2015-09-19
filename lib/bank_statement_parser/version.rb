@@ -16,5 +16,5 @@
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
 module BankStatementParser
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 end
