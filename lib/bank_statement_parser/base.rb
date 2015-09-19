@@ -75,6 +75,9 @@ module BankStatementParser
       raise "Failed to find sort code" if sort_code.nil?
       raise "Failed to find account number" if account_number.nil?
       raise "Failed to find statement date" if statement_date.nil?
+      raise "Failed to find account name" if name.nil?
+      raise "Failed to find opening balance" if opening_balance.nil?
+      raise "Failed to find closing balance" if closing_balance.nil?
     end
 
     protected
