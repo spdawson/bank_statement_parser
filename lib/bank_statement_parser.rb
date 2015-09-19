@@ -27,10 +27,16 @@ module BankStatementParser
     @@logger = logger
   end
 
-  # Parse the specified statement file, for the specified (by name) bank
+  # Parse the specified statement file, for the specified (by symbol) bank
   #
   # Returns an instance of BankStatement
-  def self.parse path, bank = 'HSBC'
+  def self.parse path, bank_symbol = :hsbc
+    # Known banks should all be tabulated here
+    banks = {
+      hsbc: 'HSBC',
+    }
+    bank = banks[bank_symbol] or raise "Unknown bank #{bank_symbol}"
+
     parser_class = Kernel.const_get(self.name + '::' + bank)
     raise "No parser for #{bank} statements" unless Class == parser_class.class
 

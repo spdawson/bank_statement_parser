@@ -45,7 +45,7 @@ file_path = 'January_2011.txt'
 
 begin
   # Attempt to parse the file
-  bank_statement = BankStatementParser.parse file_path
+  bank_statement = BankStatementParser.parse file_path, :hsbc
 
   # Statement metadata
   puts "Name %s, account number %s, sort code %s, statement date %s" %

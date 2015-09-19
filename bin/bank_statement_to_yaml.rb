@@ -23,9 +23,9 @@ require 'yaml'
 
 require 'bank_statement_parser'
 
-parser = BankStatementParser::HSBC.new
+bank_symbol = :hsbc
 
 # Attempt to parse the specified file
-parser.parse ARGV[0]
+bank_statement = BankStatementParser.parse ARGV[0], bank_symbol
 
-puts YAML.dump(parser.bank_statement)
+puts YAML.dump(bank_statement)
