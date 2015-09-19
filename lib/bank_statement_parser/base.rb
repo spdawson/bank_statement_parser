@@ -50,7 +50,11 @@ module BankStatementParser
                   when String
                     # Is the path a URI?
                     if path =~ URI::regexp(%w(ftp http https))
-                      open(path).read
+                      begin
+                        open(path).read
+                      rescue OpenURI::HTTPError => e
+                        raise "Failed to read URI #{path}: #{e}"
+                      end
                     else
                       raise "Expected a text file path" unless
                         path =~ /\.txt\z/
