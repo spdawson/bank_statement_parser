@@ -18,6 +18,7 @@
 require 'date'
 require 'bank_statement_parser/base'
 require 'bank_statement_parser/statement_record'
+require 'bank_statement_parser/statement_record_types'
 require 'bank_statement_parser/utils'
 module BankStatementParser
 

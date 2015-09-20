@@ -15,41 +15,25 @@
 # You should have received a copy of the GNU General Public License
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
-require 'yaml'
-require 'bank_statement_parser/statement_record_types'
-
 module BankStatementParser
 
-  # A bank statement record
-  class StatementRecord
-    attr_accessor :date, :type, :credit, :amount, :detail, :balance
-
-    # Constructor
-    def initialize date: nil, type: nil, credit: nil, amount: nil, detail: nil,
-      balance: nil
-
-      @date = date
-      @type = type
-      @credit = credit
-      @amount = amount
-      @detail = detail
-      @balance = balance
-    end
-
-    # Stringify
-    def to_s
-      to_yaml
-    end
-
-    # Equality test
-    def ==(other)
-      super || (date == other.date &&
-                type == other.type &&
-                credit == other.credit &&
-                amount == other.amount &&
-                detail == other.detail &&
-                balance == other.balance)
-    end
+  # Constants to enumerate bank statement record types
+  module StatementRecordTypes
+    ATM = :atm
+    BILL_PAYMENT = :bill_payment
+    CHEQUE = :cheque
+    CIRRUS = :cirrus
+    CREDIT = :credit
+    DIRECT_DEBIT = :direct_debit
+    DIVIDEND = :dividend
+    DEBIT = :debit
+    INTEREST = :interest
+    MAESTRO = :maestro
+    PAYING_IN_MACHINE = :paying_in_machine
+    STANDING_ORDER = :standing_order
+    TRANSFER = :transfer
+    VISA = :visa
+    CONTACTLESS = :contactless
   end
 
 end
