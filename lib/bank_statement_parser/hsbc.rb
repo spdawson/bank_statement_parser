@@ -113,8 +113,22 @@ module BankStatementParser
 
     private
 
-    TYPES = ["ATM", "BP", "CHQ", "CIR", "CR", "DD", "DIV", "DR",
-             "MAE", "PIM", "SO", "TFR", "VIS", ")))"]
+    TYPES = {
+      'ATM' => StatementRecordTypes::ATM,
+      'BP' => StatementRecordTypes::BILL_PAYMENT,
+      'CHQ' => StatementRecordTypes::CHEQUE,
+      'CIR' => StatementRecordTypes::CIRRUS,
+      'CR' => StatementRecordTypes::CREDIT,
+      'DD' => StatementRecordTypes::DIRECT_DEBIT,
+      'DIV' => StatementRecordTypes::DIVIDEND,
+      'DR' => StatementRecordTypes::DEBIT,
+      'MAE' => StatementRecordTypes::MAESTRO,
+      'PIM' => StatementRecordTypes::PAYING_IN_MACHINE,
+      'SO' => StatementRecordTypes::STANDING_ORDER,
+      'TFR' => StatementRecordTypes::TRANSFER,
+      'VIS' => StatementRecordTypes::VISA,
+      ')))' => StatementRecordTypes::CONTACTLESS,
+    }
 
     MONTHS = Date::MONTHNAMES[1..12]
 
@@ -372,7 +386,7 @@ module BankStatementParser
       end
 
       payment_details = nil
-      if payment_type_and_details =~ /\A(?<payment_type>#{TYPES.map{ |t| Regexp.quote(t) }.join('|')})\s+(?<payment_details>.*)\z/
+      if payment_type_and_details =~ /\A(?<payment_type>#{TYPES.keys.map{ |t| Regexp.quote(t) }.join('|')})\s+(?<payment_details>.*)\z/
         logger.debug { "Found the start of a record (group)" }
         @cached_payment_type = Regexp.last_match(:payment_type)
         payment_details = Regexp.last_match(:payment_details)
@@ -400,6 +414,7 @@ module BankStatementParser
         # Create statement record
         record = StatementRecord.new(date: @cached_statement_date,
                                      type: @cached_payment_type,
+                                     record_type: TYPES[@cached_payment_type],
                                      credit: record_credit,
                                      amount: record_amount,
                                      detail: full_details,
