@@ -3,6 +3,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-09
   type: PIM
+  record_type: :paying_in_machine
   credit: true
   amount: 215.0
   detail: CASH IN HSBC MAY09
@@ -10,6 +11,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-09
   type: CR
+  record_type: :credit
   credit: true
   amount: 45.0
   detail: CHQ IN AT HSBC BANK PLC
@@ -17,6 +19,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-12
   type: VIS
+  record_type: :visa
   credit: false
   amount: 11.6
   detail: WESTON EASTERN ONE
@@ -24,6 +27,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-14
   type: TFR
+  record_type: :transfer
   credit: false
   amount: 200.0
   detail: 123456 12345678
@@ -31,6 +35,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-14
   type: BP
+  record_type: :bill_payment
   credit: false
   amount: 70.2
   detail: HMRC NICO
@@ -38,6 +43,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-14
   type: BP
+  record_type: :bill_payment
   credit: true
   amount: 45.0
   detail: WILKINS A B
@@ -45,6 +51,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-15
   type: CHQ
+  record_type: :cheque
   credit: false
   amount: 151.2
   detail: '100006'
@@ -52,6 +59,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-15
   type: VIS
+  record_type: :visa
   credit: false
   amount: 45.0
   detail: TESCO STORES 1234
@@ -59,6 +67,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-16
   type: DD
+  record_type: :direct_debit
   credit: false
   amount: 9.58
   detail: ABC
@@ -66,6 +75,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-16
   type: CHQ
+  record_type: :cheque
   credit: false
   amount: 200.0
   detail: '100007'
@@ -73,6 +83,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-16
   type: BP
+  record_type: :bill_payment
   credit: false
   amount: 80.0
   detail: J R SMITHS
@@ -80,6 +91,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-17
   type: PIM
+  record_type: :paying_in_machine
   credit: true
   amount: 235.0
   detail: CASH IN HSBC MAY17
@@ -87,6 +99,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-17
   type: ATM
+  record_type: :atm
   credit: false
   amount: 180.0
   detail: CASH HSBC MAY17
@@ -94,6 +107,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-18
   type: BP
+  record_type: :bill_payment
   credit: false
   amount: 107.0
   detail: MISS Z X MILKS
@@ -101,6 +115,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-19
   type: CR
+  record_type: :credit
   credit: true
   amount: 45.0
   detail: CHQ IN AT HSBC BANK PLC
@@ -108,6 +123,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-19
   type: VIS
+  record_type: :visa
   credit: false
   amount: 40.1
   detail: TESCO PAY AT PUMP
@@ -115,6 +131,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-22
   type: BP
+  record_type: :bill_payment
   credit: true
   amount: 45.0
   detail: WILKINS A B
@@ -122,6 +139,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-23
   type: CHQ
+  record_type: :cheque
   credit: false
   amount: 15.0
   detail: '100008'
@@ -129,6 +147,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-23
   type: PIM
+  record_type: :paying_in_machine
   credit: true
   amount: 365.0
   detail: CASH IN HSBC MAY23
@@ -136,6 +155,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-27
   type: DD
+  record_type: :direct_debit
   credit: false
   amount: 15.2
   detail: ABCD
@@ -143,6 +163,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-27
   type: SO
+  record_type: :standing_order
   credit: false
   amount: 150.0
   detail: MISS J R SMITHS
@@ -150,6 +171,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-27
   type: VIS
+  record_type: :visa
   credit: false
   amount: 9.25
   detail: PAPERCHASE
@@ -157,6 +179,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-28
   type: BP
+  record_type: :bill_payment
   credit: true
   amount: 45.0
   detail: WILKINS A B
@@ -164,6 +187,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-29
   type: CHQ
+  record_type: :cheque
   credit: false
   amount: 200.0
   detail: '100009'
@@ -171,6 +195,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-30
   type: PIM
+  record_type: :paying_in_machine
   credit: true
   amount: 305.0
   detail: CASH IN HSBC MAY30
@@ -178,6 +203,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-05-30
   type: CR
+  record_type: :credit
   credit: true
   amount: 45.0
   detail: CHQ IN AT HSBC BANK PLC
@@ -185,6 +211,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-06-01
   type: BP
+  record_type: :bill_payment
   credit: false
   amount: 45.0
   detail: VWXY
@@ -192,6 +219,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-06-02
   type: DD
+  record_type: :direct_debit
   credit: false
   amount: 29.6
   detail: POWERWASH AB
@@ -199,6 +227,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-06-02
   type: SO
+  record_type: :standing_order
   credit: false
   amount: 15.0
   detail: SHEFFIELD PO
@@ -206,6 +235,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-06-02
   type: BP
+  record_type: :bill_payment
   credit: true
   amount: 50.0
   detail: FISH SERVICE
@@ -213,6 +243,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-06-06
   type: CR
+  record_type: :credit
   credit: true
   amount: 665.0
   detail: CASH IN AT HSBC BANK PLC
@@ -220,6 +251,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-06-06
   type: BP
+  record_type: :bill_payment
   credit: true
   amount: 45.0
   detail: WILKINS A B
@@ -227,6 +259,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-06-06
   type: CR
+  record_type: :credit
   credit: true
   amount: 115.0
   detail: CHQ IN AT HSBC BANK PLC

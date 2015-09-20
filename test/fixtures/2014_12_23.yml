@@ -3,6 +3,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2014-12-12
   type: CR
+  record_type: :credit
   credit: true
   amount: 1207.44
   detail: |-

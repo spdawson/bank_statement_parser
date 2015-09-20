@@ -3,6 +3,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2010-10-01
   type: CR
+  record_type: :credit
   credit: true
   amount: 100.0
   detail: WILSON AN
@@ -10,6 +11,7 @@ records:
 - !ruby/object:BankStatementParser::StatementRecord
   date: 2010-10-05
   type: SO
+  record_type: :standing_order
   credit: false
   amount: 100.0
   detail: JAMES WILSON

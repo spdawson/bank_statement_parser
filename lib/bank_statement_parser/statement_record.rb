@@ -22,14 +22,22 @@ module BankStatementParser
 
   # A bank statement record
   class StatementRecord
-    attr_accessor :date, :type, :credit, :amount, :detail, :balance
+    attr_accessor :date, :type, :record_type, :credit, :amount, :detail, :balance
 
     # Constructor
-    def initialize date: nil, type: nil, credit: nil, amount: nil, detail: nil,
+    def initialize date: nil, type: nil, record_type: nil, credit: nil, amount: nil, detail: nil,
       balance: nil
+
+      # Sanity check the record type parameter
+      known_record_types = StatementRecordTypes.constants(false).map do |k|
+        StatementRecordTypes.const_get(k, false)
+      end
+      raise "Unknown statement record type #{record_type}" unless
+        known_record_types.include?(record_type)
 
       @date = date
       @type = type
+      @record_type = record_type
       @credit = credit
       @amount = amount
       @detail = detail
@@ -45,6 +53,7 @@ module BankStatementParser
     def ==(other)
       super || (date == other.date &&
                 type == other.type &&
+                record_type == other.record_type &&
                 credit == other.credit &&
                 amount == other.amount &&
                 detail == other.detail &&
