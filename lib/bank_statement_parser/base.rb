@@ -67,7 +67,11 @@ module BankStatementParser
                   when Pathname, URI
                     path.read
                   else
-                    raise ArgumentError, "Expected String, IO, Pathname or URI"
+                    if path.respond_to?(:read)
+                      path.read
+                    else
+                      raise ArgumentError, "Expected String, IO, Pathname or URI"
+                    end
                   end
 
       # Process each line in turn
