@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.executables << "bank_statement_to_text.sh"
   s.homepage    =
     "https://github.com/spdawson/bank_statement_parser"
-  s.license     = "GPLv3"
+  s.license     = "GPL-3.0"
   s.required_ruby_version = ">= 2.0"
   s.requirements << "pdftotext(1)"
 
