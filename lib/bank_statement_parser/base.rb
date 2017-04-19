@@ -1,4 +1,4 @@
-# Copyright 2015 Simon Dawson <spdawson@gmail.com>
+# Copyright 2015-2017 Simon Dawson <spdawson@gmail.com>
 
 # This file is part of bank_statement_parser.
 #
@@ -15,6 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with bank_statement_parser. If not, see <http://www.gnu.org/licenses/>.
 
+require 'fileutils'
 require 'open-uri'
 require 'stringio'
 require 'bank_statement_parser/bank_statement'
@@ -32,8 +33,6 @@ module BankStatementParser
   #
   # * void reset()
   class Base
-
-    require 'fileutils.rb'
 
     attr_accessor :bank_statement
 
