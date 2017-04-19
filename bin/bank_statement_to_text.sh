@@ -2,7 +2,7 @@
 #
 # Convert the specified bank statement PDF file to text
 
-# Copyright 2015 Simon Dawson <spdawson@gmail.com>
+# Copyright 2015-2017 Simon Dawson <spdawson@gmail.com>
 
 # This file is part of bank_statement_parser.
 #
