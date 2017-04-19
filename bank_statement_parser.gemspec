@@ -1,4 +1,4 @@
-# Copyright 2015 Simon Dawson <spdawson@gmail.com>
+# Copyright 2015-2017 Simon Dawson <spdawson@gmail.com>
 
 # This file is part of bank_statement_parser.
 #
@@ -22,7 +22,7 @@ require 'bank_statement_parser/version'
 Gem::Specification.new do |s|
   s.name        = "bank_statement_parser"
   s.version     = BankStatementParser::VERSION
-  s.date        = "2015-03-29"
+  s.date        = '2017-04-19'
   s.summary     = "Bank statement parser"
   s.description = "A gem for parsing bank statements"
   s.authors     = ["Simon Dawson"]
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
                    "lib/bank_statement_parser/bank_statement.rb",
                    "lib/bank_statement_parser/base.rb",
                    "lib/bank_statement_parser/hsbc.rb",
+                   "lib/bank_statement_parser/railtie.rb",
                    "lib/bank_statement_parser/statement_record.rb",
                    "lib/bank_statement_parser/statement_record_types.rb",
                    "lib/bank_statement_parser/utils.rb"]

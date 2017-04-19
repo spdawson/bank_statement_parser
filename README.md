@@ -24,15 +24,6 @@ Run the following command.
 gem install bank_statement_parser
 ```
 
-## Rails configuration
-
-Create the file `config/initializers/bank_statement_parser.rb`, containing
-the following code.
-```ruby
-# Hook up the bank statement parser to use the Rails logger
-BankStatementParser.logger = Rails.logger
-```
-
 ## Example
 
 Parse a statement file from the local filesystem:
@@ -125,7 +116,7 @@ A utility script `bank_statement_to_text.sh` is provided, which uses `pdftotext(
 
 ## License
 
-Copyright 2015 Simon Dawson <spdawson@gmail.com>
+Copyright 2015-2017 Simon Dawson <spdawson@gmail.com>
 
 bank_statement_parser is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
