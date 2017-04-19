@@ -89,6 +89,11 @@ module BankStatementParser
       self
     end
 
+    # Handle the specified line
+    def handle_line(line)
+      raise NotImplementedError
+    end
+
     protected
 
     # Convenience method to access the logger
