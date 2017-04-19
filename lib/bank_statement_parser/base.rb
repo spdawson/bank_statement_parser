@@ -85,6 +85,8 @@ module BankStatementParser
       raise "Failed to find account name" if name.nil?
       raise "Failed to find opening balance" if opening_balance.nil?
       raise "Failed to find closing balance" if closing_balance.nil?
+
+      self
     end
 
     protected
@@ -97,6 +99,7 @@ module BankStatementParser
     # Reset the parser
     def reset
       @bank_statement = BankStatement.new
+      self
     end
 
     # @todo FIXME: Why can't we use Forwardable for these methods?
