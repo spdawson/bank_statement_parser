@@ -19,9 +19,8 @@ require 'logger'
 require 'bank_statement_parser/hsbc'
 module BankStatementParser
 
-  @@logger = Logger.new(STDERR)
   def self.logger
-    @@logger
+    @@logger ||= Logger.new(STDERR)
   end
   def self.logger=(logger)
     @@logger = logger
