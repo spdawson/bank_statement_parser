@@ -108,6 +108,12 @@ class Barclays < BankStatementParser::Base
 end
 ```
 
+Additionally, you will need to register your new parser, before use:
+
+```rb
+BankStatementParser.register_bank(:barclays, 'Barclays')
+```
+
 ## HSBC statements
 
 HSBC statements produced from 13 July 2014 are available in PDF format. Earlier statements can be "printed" from the web view, and thus saved as PDF. This parser should work with either of these types of statement, following conversion from PDF to plain text.

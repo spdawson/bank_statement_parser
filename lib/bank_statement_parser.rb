@@ -18,6 +18,14 @@
 require 'logger'
 require 'bank_statement_parser/hsbc'
 module BankStatementParser
+  # Known banks should all be tabulated here
+  @@banks = {
+    hsbc: 'HSBC',
+  }
+
+  def self.register_bank(key, val)
+    @@banks[key] = val
+  end
 
   def self.logger
     @@logger ||= Logger.new(STDERR)
@@ -30,21 +38,23 @@ module BankStatementParser
   #
   # Returns an instance of BankStatement
   def self.parse path, bank_symbol = :hsbc
-    # Known banks should all be tabulated here
-    banks = {
-      hsbc: 'HSBC',
-    }
-    bank = banks[bank_symbol] or raise "Unknown bank #{bank_symbol}"
-
-    parser_class = Kernel.const_get(self.name + '::' + bank)
-    raise "No parser for #{bank} statements" unless Class == parser_class.class
-
-    parser = parser_class.new
+    parser = parser_factory(bank_symbol)
     parser.parse path
 
     return parser.bank_statement
   end
 
+  # Create a parser for the specified bank
+  def self.parser_factory(bank_symbol)
+    bank = @@banks[bank_symbol] or raise "Unknown bank #{bank_symbol}"
+
+    parser_class = Kernel.const_get(self.name + '::' + bank)
+    raise "No parser for #{bank} statements" unless Class == parser_class.class
+
+    parser = parser_class.new
+    raise "Invalid parser class" unless parser.is_a?(BankStatementParser::Base)
+    parser
+  end
 end
 
 require 'bank_statement_parser/railtie' if defined?(Rails)
