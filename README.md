@@ -82,7 +82,7 @@ from the override.
 An example parser follows.
 ```rb
 module BankStatementParser
-  class Barclays < BankStatementParser::Base
+  class Barclays < Base
 
     def handle_line line
       # Keep going if we manage to parse the line
