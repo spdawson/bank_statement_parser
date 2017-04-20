@@ -81,30 +81,32 @@ from the override.
 
 An example parser follows.
 ```rb
-class Barclays < BankStatementParser::Base
+module BankStatementParser
+  class Barclays < BankStatementParser::Base
 
-  def handle_line line
-    # Keep going if we manage to parse the line
-    return true if do_something_with_line(line)
+    def handle_line line
+      # Keep going if we manage to parse the line
+      return true if do_something_with_line(line)
 
-    # Otherwise, halt the parser
-    return false
+      # Otherwise, halt the parser
+      return false
+    end
+
+    private
+
+    def reset
+      # Reset the base class
+      super
+
+      # Perform class-specific parser reset work here
+    end
+
+    def do_something_with_line line
+      # Implement class-specific line parsing here
+      return false
+    end
+
   end
-
-  private
-
-  def reset
-    # Reset the base class
-    super
-
-    # Perform class-specific parser reset work here
-  end
-
-  def do_something_with_line line
-    # Implement class-specific line parsing here
-    return false
-  end
-
 end
 ```
 
