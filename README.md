@@ -124,7 +124,7 @@ A utility script `bank_statement_to_text.sh` is provided, which uses `pdftotext(
 
 ## License
 
-Copyright 2015-2017 Simon Dawson <spdawson@gmail.com>
+Copyright 2015-2018 Simon Dawson <spdawson@gmail.com>
 
 bank_statement_parser is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
