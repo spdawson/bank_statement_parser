@@ -140,8 +140,8 @@ module BankStatementParser
                            "Balance \\(\\)"]
 
     COLUMN_HEADINGS_2ND = ["Date",
-                           "Payment type and details",
-                           "Paid out",
+                           "Pay\\s?m\\s?e\\s?nt t\\s?y\\s?p\\s?e and de\\s?t\\s?ails",
+                           "Paid o\\s?ut",
                            "Paid in",
                            "Balance"]
 
@@ -314,6 +314,8 @@ module BankStatementParser
         return
       end
 
+      return if line =~ /\A\s*A\s*\z/
+
       return if @cols.empty?
 
       return if @parser_paused
@@ -359,7 +361,7 @@ module BankStatementParser
         logger.debug { "Pausing parser" }
         @parser_paused = true
         return
-      elsif payment_type_and_details =~ /\ABALANCE BROUGHT FORWARD\z/i
+      elsif payment_type_and_details =~ /\ABALANCE BROUGHT FORWARD(\s+\.)?\z/i
         if opening_balance.nil?
           ob = col_fragments[4]
           unless ob.nil?
