@@ -341,7 +341,7 @@ module BankStatementParser
           @cached_statement_date =
             fix_record_date_year(@cached_statement_date)
         rescue ArgumentError => e
-          raise "Failed to parse date/time #{date_string}: #{e}"
+          raise "Failed to parse date/time '#{date_string}': #{e}"
         end
       end
 
