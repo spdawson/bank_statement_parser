@@ -103,7 +103,7 @@ module BankStatementParser
         when StatementFormat::FORMAT_2ND
           headings = COLUMN_HEADINGS_2ND
         end
-        logger.debug { "Parsing potential record line (format #{@statement_format})" }
+        logger.debug { "Parsing potential record line (format #{@statement_format}): #{line}" }
         parse_record_line_format(line, headings)
 
       end
