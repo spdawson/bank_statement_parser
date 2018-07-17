@@ -22,7 +22,7 @@ require 'bank_statement_parser/version'
 Gem::Specification.new do |s|
   s.name        = "bank_statement_parser"
   s.version     = BankStatementParser::VERSION
-  s.date        = '2018-07-16'
+  s.date        = '2018-07-17'
   s.summary     = "Bank statement parser"
   s.description = "A gem for parsing bank statements"
   s.authors     = ["Simon Dawson"]
