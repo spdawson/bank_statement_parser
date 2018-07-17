@@ -140,7 +140,7 @@ module BankStatementParser
                            "Balance \\(\\)"]
 
     COLUMN_HEADINGS_2ND = ["Date",
-                           "Pay\\s?m\\s?e\\s?nt t\\s?y\\s?p\\s?e and de\\s?t\\s?ails",
+                           "Pay\\s?m\\s?e\\s?nt t\\s?y\\s?p\\s?e and d\\s?e\\s?t\\s?ails",
                            "Paid o\\s?ut",
                            "Paid in",
                            "Balance"]
