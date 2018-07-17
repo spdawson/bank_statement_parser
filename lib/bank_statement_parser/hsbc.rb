@@ -314,6 +314,7 @@ module BankStatementParser
         return
       end
 
+      # Skip known "noise" lines
       return if line =~ /\A\s*A\s*\z/
 
       return if @cols.empty?
