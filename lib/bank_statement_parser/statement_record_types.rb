@@ -34,6 +34,7 @@ module BankStatementParser
     TRANSFER = :transfer
     VISA = :visa
     CONTACTLESS = :contactless
+    INTERNET_ACCESS_PAYMENT = :internet_access_payment
   end
 
 end

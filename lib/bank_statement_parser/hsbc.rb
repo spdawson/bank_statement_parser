@@ -128,6 +128,7 @@ module BankStatementParser
       'TFR' => StatementRecordTypes::TRANSFER,
       'VIS' => StatementRecordTypes::VISA,
       ')))' => StatementRecordTypes::CONTACTLESS,
+      'IAP' => StatementRecordTypes::INTERNET_ACCESS_PAYMENT,
     }
 
     MONTHS = Date::MONTHNAMES[1..12]
